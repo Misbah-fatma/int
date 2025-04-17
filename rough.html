@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Input Printer</title>
+</head>
+<body>
+  <h2>Enter Something:</h2>
+  <form id="inputForm">
+    <input type="text" id="userInput" placeholder="Type anything..." required>
+    <button type="submit">Submit</button>
+  </form>
+
+  <h3>Output:</h3>
+  <p id="outputText"></p>
+
+  <script>
+    const form = document.getElementById('inputForm');
+    const input = document.getElementById('userInput');
+    const output = document.getElementById('outputText');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent page reload
+      output.textContent = input.value; // Print the input value
+      input.value = ''; // Clear the input
+    });
+  </script>
+</body>
+</html>
